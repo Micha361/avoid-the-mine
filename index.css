@@ -1,0 +1,90 @@
+body {
+  background-color: #0c1021;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: arial;
+}
+
+.container {
+  width: 700px;
+  height: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;  
+  background-color: #0F1328;
+  border-radius: 40px;
+}
+
+.gridcontainer {
+  display: grid;
+  grid-template-columns: repeat(5, 60px);
+  gap: 45px; 
+}
+
+.griditem {
+  background-color: #000000;
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  transition: background-image 0.5s ease-in-out;
+}
+
+.griditem:hover {
+  cursor: pointer;
+}
+
+.griditem.fade-in {
+  animation: fadeIn 0.3s;
+}
+
+.griditem.pop-in {
+  animation: popIn 0.3s ease-in-out;
+}
+
+#messageBox {
+  color: white;
+  padding-top: 20px;
+}
+
+#numberBox {
+  color: white;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .griditem {
+    background-color: #000000;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .gridcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 40px);
+    gap: 20px; 
+  }
+}
